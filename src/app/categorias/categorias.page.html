@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Categorias
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+      <ion-item button size="large" *ngFor="let cat of Categorias">
+        <ion-thumbnail size="large" slot="start">
+          <img src="{{bucket}}/cat{{cat.cod_categoria}}.jpg">
+        </ion-thumbnail>
+        <h2>{{ cat.nome }}</h2>
+      </ion-item>
+  </ion-list>
+</ion-content>

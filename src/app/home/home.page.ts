@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { NavController, MenuController } from '@ionic/angular';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -7,6 +10,16 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(public router: Router,public menu: MenuController){}    
+  public login(){
+    this.router.navigateByUrl("categorias");
+  }
+
+  ionViewWillEnter(){
+    this.menu.enable(false);
+  }
+  ionViewWillLeave(){
+    this.menu.enable(true);
+  }
 
 }
