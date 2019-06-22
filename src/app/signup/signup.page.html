@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="arrow-back">
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="signupUser(); $event.preventDefault()">
+    <ion-item>
+      <ion-label position="stacked">Nome*</ion-label>
+      <ion-input name="nome" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Email*</ion-label>
+      <ion-input name="email" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Senha*</ion-label>
+      <ion-input name="senha" type="password"></ion-input>
+    </ion-item> 
+    <ion-item>
+      <ion-label position="stacked">Telefone 1*</ion-label>
+      <ion-input name="telefone1" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Telefone 2</ion-label>
+      <ion-input name="telefone2" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">CPF*</ion-label>
+      <ion-input name="cpfOuCnpj" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Logradouro*</ion-label>
+      <ion-input name="logradouro" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Número*</ion-label>
+      <ion-input name="numero" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Complemento</ion-label>
+      <ion-input name="complemento" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Bairro</ion-label>
+      <ion-input name="bairro" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">CEP*</ion-label>
+      <ion-input name="cep" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Estado*</ion-label>
+      <ion-select name="estado" (ionChange)="updateCidades()">
+        <ion-select-option value="1">Minas Gerais</ion-select-option>
+        <ion-select-option value="2">São Paulo</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Cidade*</ion-label>
+      <ion-select name="cidade">
+        <ion-select-option value="1">Uberlândia</ion-select-option>
+        <ion-select-option value="2">Campinas</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-button expand="block" type="submit">Criar conta</ion-button>
+  </form>
+</ion-content>

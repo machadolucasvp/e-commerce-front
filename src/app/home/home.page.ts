@@ -49,6 +49,9 @@ export class HomePage {
   ionViewWillEnter(){
     this.menu.enable(false);
   }
+  public register(){
+    this.router.navigateByUrl('signup');
+  }
   ionViewWillLeave(){
     this.menu.enable(true);
   }

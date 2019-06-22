@@ -14,17 +14,17 @@ export class AppComponent {
     {
       title: 'Profile',
       url: '/profile',
-      icon: 'home'
+      icon: 'contact'
     },
     {
       title: 'Categorias',
       url: '/categorias',
-      icon: 'home'
+      icon: 'list'
     },
     {
       title: 'Logout',
       url: '/logout',
-      icon: 'home'
+      icon: 'power'
     }
   ];
 
