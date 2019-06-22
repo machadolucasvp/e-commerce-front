@@ -10,9 +10,9 @@
 </ion-header>
 
 
-<ion-content>
-  <ion-avatar>
-    <img class="circle" [src]="cliente?.image || 'assets/imgs/avatar-blank.png'">
+<ion-content padding>
+  <ion-avatar class="avatar">
+    <img [src]="profileImage">
   </ion-avatar>
   <h2 text-center>{{cliente?.nome}}</h2>
   <p text-center>{{cliente?.email}}</p>

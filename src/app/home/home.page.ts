@@ -18,6 +18,8 @@ export class HomePage {
   }
 
   constructor(public router: Router,public menu: MenuController,public authentication : AuthService){}    
+  
+  
   public login(){
     this.authentication.authenticate(this.auth).subscribe(
       response =>{
@@ -29,6 +31,19 @@ export class HomePage {
 
       }
     );
+  }
+
+  ionViewDidEnter(){
+      this.authentication.refreshToken().subscribe(
+        response =>{
+          this.authentication.sucessfullLogin(response.headers.get('Authorization'));
+          this.router.navigateByUrl("categorias");
+  
+        },
+        error => {
+  
+        }
+      );
   }
 
   ionViewWillEnter(){

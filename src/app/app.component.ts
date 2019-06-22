@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -19,8 +20,15 @@ export class AppComponent {
       title: 'Categorias',
       url: '/categorias',
       icon: 'home'
+    },
+    {
+      title: 'Logout',
+      url: '/logout',
+      icon: 'home'
     }
   ];
+
+
 
   constructor(
     private platform: Platform,
