@@ -11,7 +11,7 @@ export class ErrorInterceptor implements HttpInterceptor {
         return next.handle(req).pipe(catchError(error => {
 
             let errorObj = error;
-            if (errorObj.error) {
+            if (errorObj.error) {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
                 errorObj = errorObj.error;
             }
             if (!errorObj.status) {
@@ -22,7 +22,7 @@ export class ErrorInterceptor implements HttpInterceptor {
             console.log(errorObj);
 
             return Observable.throw(errorObj);
-        })) as any;
+        })) as any;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
     }
 }
 
