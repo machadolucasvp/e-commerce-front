@@ -49,7 +49,6 @@ export class ProfilePage implements OnInit {
     this.clienteService.getImageFromBucket(this.cliente.cod_cliente)
     .subscribe(response => {
       this.cliente.image = `${API_CONFIG.bucket}/cp${this.cliente.cod_cliente}.jpg`;
-      console.log(this.cliente.image);
       this.updateProfileImage();
     },
     error => {

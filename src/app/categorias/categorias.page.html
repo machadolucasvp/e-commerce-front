@@ -12,7 +12,7 @@
 
 <ion-content padding>
   <ion-list>
-      <ion-item button size="large" *ngFor="let cat of Categorias">
+      <ion-item button size="large" *ngFor="let cat of Categorias" (click)="openProdutos(cat.cod_categoria)">
         <ion-thumbnail size="large" slot="start">
           <img src="{{bucket}}/cat{{cat.cod_categoria}}.jpg">
         </ion-thumbnail>

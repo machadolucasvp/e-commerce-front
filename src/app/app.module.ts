@@ -18,6 +18,7 @@ import { AuthInterceptorProvider } from 'src/services/auth-interceptor';
 import { EstadoService } from 'src/services/domain/estados.service';
 import { CidadesService } from 'src/services/domain/cidades.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProdutoService } from 'src/services/domain/produtos.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -40,7 +41,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     StorageService,
     ClienteService,
     EstadoService,
-    CidadesService
+    CidadesService,
+    ProdutoService
   ],
   bootstrap: [AppComponent]
 })
