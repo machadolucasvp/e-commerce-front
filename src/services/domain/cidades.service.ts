@@ -593,16 +593,17 @@ export class CidadesService{
   
     constructor(){
     }
-    //Esses ifs pra muitos estados podem ser substituidos pela criação da lista de cidades por estado em formato de DTO/Dicionarios, depois ajeitar isso pra dar uma melhorada
-    
-    findById(id: number) : string[]{
-        if(id==0){
+
+
+    //Depois melhorar essa logica, ta bem feia hehe
+    findByEstado(estadoAux: string) : string[]{
+        if(estadoAux==="Maranhão"){
             return this.Maranhão;
         }
-        if(id==1){
+        if(estadoAux==="Piaui"){
             return this.Piaui
         }
-        if(id==2){
+        if(estadoAux=="Pará"){
             return this.Pará;
         }
 

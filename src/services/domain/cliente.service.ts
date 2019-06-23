@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ClienteDTO } from 'src/models/cliente.dto';
 import { API_CONFIG } from 'src/config/api.config';
+import { ClienteNewDTO } from 'src/models/clientenew.dto';
 
 @Injectable()
 export class ClienteService{
@@ -18,5 +19,13 @@ export class ClienteService{
     getImageFromBucket(cod_cliente : string) : Observable<any> {
         let url = `${API_CONFIG.bucket}/cp${cod_cliente}.jpg`;
         return this.http.get(url, {responseType : 'blob'});
+    }
+
+    insert(cliente: ClienteNewDTO){
+        console.log(cliente);
+        return this.http.post(`${API_CONFIG.baseUrl}/clientes`,cliente,{
+            observe: 'response',
+            responseType: 'text'
+        });
     }
 }
