@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SystemJsNgModuleLoader } from '@angular/core';
 import { ProdutoDTO } from 'src/models/produto.dto';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ProdutoService } from 'src/services/domain/produtos.service';
@@ -17,9 +17,11 @@ export class ProdutosPage implements OnInit {
 
   ngOnInit() {
     this.router.params.subscribe(response=>{
-      this.cod_categoriaAux=response['cod_categoria']
+      this.cod_categoriaAux=response['cod_categoria'];
+      console.log(this.cod_categoriaAux);
       this.produtoService.findByCategoria(this.cod_categoriaAux).subscribe(response=>{
         this.produtosDTO=response['content'];
+        console.log(this.produtosDTO);
         this.getImageIfExists();
       },
       error => {});
@@ -37,7 +39,8 @@ export class ProdutosPage implements OnInit {
         let produto=this.produtosDTO[i];
         this.produtoService.getImageFromBucket(produto.cod_produto)
       .subscribe(response => {
-        produto.imageUrl = `${API_CONFIG.baseUrl}/prod${produto.cod_produto}.jpg`;
+        produto.imageUrl = `${API_CONFIG.bucket}/prod${produto.cod_produto}.jpg`;
+        console.log(produto.imageUrl);
       },
       error => {
       });

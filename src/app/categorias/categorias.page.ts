@@ -26,7 +26,7 @@ export class CategoriasPage implements OnInit {
    }
 
   openProdutos(cod_categoria: string){
-    this.router.navigate(['produtos',cod_categoria]);
+    this.router.navigate(['produtos',{cod_categoria}]);
   }
 
   ngOnInit() {
