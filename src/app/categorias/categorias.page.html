@@ -11,6 +11,13 @@
 
 
 <ion-content padding>
+
+    <ion-fab size="small" vertical="top" horizontal="end" slot="fixed">
+        <ion-fab-button routerLink="/carrinho" routerDirection="forward" color="primary">
+          <ion-icon name="cart"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+
   <ion-list>
       <ion-item button size="large" *ngFor="let cat of Categorias" (click)="openProdutos(cat.cod_categoria)">
         <ion-thumbnail size="large" slot="start">

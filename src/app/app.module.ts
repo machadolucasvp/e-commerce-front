@@ -19,6 +19,7 @@ import { EstadoService } from 'src/services/domain/estados.service';
 import { CidadesService } from 'src/services/domain/cidades.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProdutoService } from 'src/services/domain/produtos.service';
+import { PedidoService } from 'src/services/domain/pedido.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -42,7 +43,8 @@ import { ProdutoService } from 'src/services/domain/produtos.service';
     ClienteService,
     EstadoService,
     CidadesService,
-    ProdutoService
+    ProdutoService,
+    PedidoService
   ],
   bootstrap: [AppComponent]
 })

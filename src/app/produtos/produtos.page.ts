@@ -13,7 +13,7 @@ export class ProdutosPage implements OnInit {
 
   produtosDTO: ProdutoDTO[];
   cod_categoriaAux: any;
-  constructor(public router: ActivatedRoute,public produtoService: ProdutoService) { }
+  constructor(public staticRouter: Router,public router: ActivatedRoute,public produtoService: ProdutoService) { }
 
   ngOnInit() {
     this.router.params.subscribe(response=>{
@@ -29,8 +29,8 @@ export class ProdutosPage implements OnInit {
     error => {});
   }
 
-  showDetail(id: string){
-    return null;
+  showDetail(cod_produto: string){
+    this.staticRouter.navigate(['produto-details',{cod_produto}]);
   }
 
 //(click)="showDetail(produto.cod_produto) isso aqui vai la no html quando eu fizer a pagina de produto detail

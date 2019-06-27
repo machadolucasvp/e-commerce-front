@@ -14,18 +14,24 @@ export class AppComponent {
     {
       title: 'Profile',
       url: '/profile',
-      icon: 'contact'
+      icon: 'person'
     },
     {
       title: 'Categorias',
       url: '/categorias',
-      icon: 'list'
+      icon: 'list-box'
+    },
+    {
+      title: 'Carrinho',
+      url: '/carrinho',
+      icon: 'cart'
     },
     {
       title: 'Logout',
       url: '/logout',
-      icon: 'power'
+      icon: 'exit'
     }
+
   ];
 
 

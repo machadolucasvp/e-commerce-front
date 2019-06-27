@@ -16,6 +16,7 @@ export class ProfilePage implements OnInit {
 
 
   cliente : ClienteDTO;
+  
   constructor(public router: Router, public localStorage: StorageService,public clienteService: ClienteService) { 
     this.profileImage = 'assets/imgs/avatar-blank.png';
   }
