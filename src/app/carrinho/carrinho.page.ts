@@ -5,6 +5,7 @@ import { StorageService } from 'src/services/storage.service';
 import { ProdutoService } from 'src/services/domain/produtos.service';
 import { API_CONFIG } from 'src/config/api.config';
 import { ProdutoDTO } from 'src/models/produto.dto';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carrinho',
@@ -15,7 +16,7 @@ export class CarrinhoPage implements OnInit {
 
   Items: CartItem[];
 
-  constructor(public produtoService: ProdutoService,public cartService: PedidoService,public storageService: StorageService) { }
+  constructor(public router: Router, public produtoService: ProdutoService,public cartService: PedidoService,public storageService: StorageService) { }
 
   ngOnInit() {
     let cart = this.cartService.getCart();
@@ -50,6 +51,10 @@ export class CarrinhoPage implements OnInit {
   total() : number {
     return this.cartService.total();
   }  
+  goOn(){
+    this.router.navigateByUrl("categorias");
+
+  }
 
 
 

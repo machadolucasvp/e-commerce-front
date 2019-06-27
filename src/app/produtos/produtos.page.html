@@ -17,12 +17,14 @@
         </ion-fab-button>
     </ion-fab>
   <ion-list>
-    <ion-item button *ngFor="let produto of produtosDTO" (click)="showDetail(produto.cod_produto)">
-      <ion-thumbnail size="large" slot="start" item-start>
+    <ion-item  button *ngFor="let produto of produtosDTO" (click)="showDetail(produto.cod_produto)">
+      <ion-thumbnail class="thumbimg" size="large" slot="start">
         <img [src]="produto.imageUrl || 'assets/imgs/prod.jpg'">
       </ion-thumbnail>
-      <h2>{{produto.nome}}</h2>
-      <p>{{produto.preco | currency}}</p>
+      <ion-label>
+        <h2>{{produto.nome}}</h2> <br>
+        <p class="money">{{produto.preco | currency}}</p>
+      </ion-label>
     </ion-item>
   </ion-list>
 </ion-content>
