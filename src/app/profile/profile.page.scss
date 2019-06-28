@@ -5,3 +5,7 @@
     max-height: 140px !important; //any size 
     margin: 25px auto 0 auto;
 }
+ion-content{
+    --ion-background-color: var(--ion-color-dark);
+    --ion-text-color: var(--ion-color-dark-contrast);
+}

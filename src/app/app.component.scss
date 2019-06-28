@@ -1,0 +1,17 @@
+body {
+    cursor: url('https://ionicframework.com/img/finger.png'), auto;
+  }
+ion-menu{
+    --ion-background-color: var(--ion-color-dark);
+    --ion-text-color: var(--ion-color-dark-contrast);
+
+    ion-toolbar{
+        --background: var(--ion-color-tertiary);
+    }
+    ion-list{
+        background: transparent;
+    }
+    ion-icon{
+        color: var(--ion-color-light);
+    }
+}

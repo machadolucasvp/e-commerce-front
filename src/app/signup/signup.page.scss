@@ -1,3 +1,7 @@
 .invalid{
     color: red;
 }
+ion-content{
+    --ion-background-color: var(--ion-color-dark);
+    --ion-text-color: var(--ion-color-dark-contrast);
+}
