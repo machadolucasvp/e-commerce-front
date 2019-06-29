@@ -10,9 +10,13 @@ export class ClienteService{
     constructor(public http: HttpClient){
 
     }
+    findById(cod_cliente: String){
+        return this.http.get(`${API_CONFIG.baseUrl}/clientes/${cod_cliente}`);
 
-    findByEmail(email: String) :Observable<ClienteDTO>{
-        return this.http.get<ClienteDTO>(`${API_CONFIG.baseUrl}/clientes/email?value=${email}`);
+    }
+
+    findByEmail(email: String){
+        return this.http.get(`${API_CONFIG.baseUrl}/clientes/email?value=${email}`);
 
     }
 

@@ -55,6 +55,17 @@ export class CarrinhoPage implements OnInit {
     this.router.navigateByUrl("categorias");
 
   }
+  isEmpty(){
+    if(this.Items.length<=0){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+  confPedido(){
+    this.router.navigateByUrl("pagamento");
+  }
 
 
 

@@ -70,6 +70,7 @@ export class SignupPage implements OnInit {
       message: 'Cadasto efetuado com Sucesso!',
       buttons: [
             {text: 'Ok',
+            role: 'cancel',
           handler: () =>{
             this.router.navigateByUrl("home");
           }}

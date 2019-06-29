@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="arrow-back">
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+          Itens do pedido
+        </ion-card-header>
+        
+        <ion-list>
+          <ion-item *ngFor="let item of cartItems">
+            <ion-thumbnail slot="start">
+              <img [src]="item.produto.imageUrl || 'assets/imgs/prod.jpg'">
+            </ion-thumbnail>
+            <ion-label>
+                <h1>{{item.produto.nome}}</h1>
+                <p>{{item.produto.preco | currency}}</p>
+                <p>{{item.quantidade}} Unidades</p> 
+            </ion-label>
+            <p slot="end">{{item.produto.preco * item.quantidade | currency:'BRL':'symbol':'.2-2'}}</p>
+          </ion-item> 
+  
+          <ion-item>
+            <h2>Total</h2>
+            <h2 class="success" slot="end">{{total() | currency:'BRL':'symbol':'.2-2'}}</h2>
+          </ion-item>
+        </ion-list> 
+      </ion-card>
+
+      <ion-card>
+          <ion-card-header>
+            Cliente
+          </ion-card-header>
+          
+          <ion-list>
+            <ion-item>
+              <ion-label>
+              <h1>{{cliente?.nome}}</h1>
+              <p>{{cliente?.email}}</p>
+              </ion-label>
+            </ion-item> 
+          </ion-list> 
+        </ion-card>
+
+        <ion-card>
+            <ion-card-header>
+              Pagamento
+            </ion-card-header>
+            
+            <ion-list>
+              <ion-item *ngIf="pagamento.tipo_pagamento == 1">
+                <ion-label>
+                <h1>Pagamento com Boleto</h1>
+                <p>Número de Parcelas: {{pagamento?.numeroDeParcelas}}</p>
+                </ion-label>
+              </ion-item> 
+              <ion-item *ngIf="pagamento.tipo_pagamento == 2">
+                  <ion-label>
+                  <h1>Pagamento com Cartão</h1>
+                  <p>Falta implementar...</p>
+                  </ion-label>
+                </ion-item> 
+            </ion-list> 
+          </ion-card>
+
+          <ion-card>
+              <ion-card-header>
+                Endereço
+              </ion-card-header>
+              
+              <ion-list>
+                <ion-item>
+                  <ion-label>
+                  <h2>{{endereco?.logradouro}}</h2>
+                  <p>{{endereco?.numero}} {{endereco?.bairro}} {{endereco?.complemento}}</p>
+                  <p>{{endereco?.estado}}  {{endereco?.cidade}}</p>
+                  <p>{{endereco?.cep}}</p>
+                  </ion-label>
+                </ion-item> 
+              </ion-list> 
+            </ion-card>
+
+
+
+
+  <ion-button expand="block" color="tertiary" (click)="postPedido()"> Confirmar Pedido</ion-button>
+</ion-content>
