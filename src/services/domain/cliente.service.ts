@@ -4,10 +4,11 @@ import { Observable } from 'rxjs';
 import { ClienteDTO } from 'src/models/cliente.dto';
 import { API_CONFIG } from 'src/config/api.config';
 import { ClienteNewDTO } from 'src/models/clientenew.dto';
+import { ImageUtilService } from '../image.service';
 
 @Injectable()
 export class ClienteService{
-    constructor(public http: HttpClient){
+    constructor(public imageUtilService: ImageUtilService,public http: HttpClient){
 
     }
     findById(cod_cliente: String){
@@ -32,4 +33,18 @@ export class ClienteService{
             responseType: 'text'
         });
     }
+
+    uploadPicture(picture) {
+        let formData : FormData = new FormData();
+        formData.set('file', picture, 'file.png');
+        return this.http.post(
+            `${API_CONFIG.baseUrl}/clientes/picture`, 
+            formData,
+            { 
+                observe: 'response', 
+                responseType: 'text'
+            }
+        ); 
+    }
+
 }

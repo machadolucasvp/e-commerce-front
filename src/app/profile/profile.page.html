@@ -16,4 +16,34 @@
   </ion-avatar>
   <h2 text-center>{{cliente?.nome}}</h2>
   <p text-center>{{cliente?.email}}</p>
+
+
+  <ion-card>
+      <ion-card-header>
+        Upload de foto
+      </ion-card-header>
+        <ion-item>
+          <ion-input id="myFileInput" type="file" (change)="onFileSelected($event)"></ion-input>
+          <label class="myFakeUploadButton" for="myFileInput"><ion-icon name="camera" slot="start"></ion-icon> Escolha um arquivo jpg ou png.</label>
+        </ion-item>
+          <ion-button expand="block"  color="tertiary" (click)="upload()">Upload</ion-button>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        Endereço
+      </ion-card-header>
+      
+      <ion-list>
+        <ion-item>
+          <ion-label>
+          <h2>{{endereco?.logradouro}}</h2>
+          <p>{{endereco?.numero}} {{endereco?.bairro}} {{endereco?.complemento}}</p>
+          <p>{{endereco?.estado}}  {{endereco?.cidade}}</p>
+          <p>{{endereco?.cep}}</p>
+          </ion-label>
+        </ion-item> 
+      </ion-list> 
+    </ion-card>
+    
 </ion-content>

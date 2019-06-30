@@ -9,3 +9,7 @@ ion-content{
     --ion-background-color: var(--ion-color-dark);
     --ion-text-color: var(--ion-color-dark-contrast);
 }
+#myFileInput{
+    position: absolute;
+    opacity: 0;
+  }

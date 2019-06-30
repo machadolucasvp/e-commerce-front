@@ -22,6 +22,7 @@ import { ProdutoService } from 'src/services/domain/produtos.service';
 import { PedidoService } from 'src/services/domain/pedido.service';
 import { PassDataService } from 'src/services/passdata.service';
 import { PedidoNewService } from 'src/services/pedidoNew.service';
+import { ImageUtilService } from 'src/services/image.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -48,7 +49,8 @@ import { PedidoNewService } from 'src/services/pedidoNew.service';
     ProdutoService,
     PedidoService,
     PassDataService,
-    PedidoNewService
+    PedidoNewService,
+    ImageUtilService
   ],
   bootstrap: [AppComponent]
 })
