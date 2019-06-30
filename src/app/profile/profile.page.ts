@@ -80,7 +80,7 @@ export class ProfilePage implements OnInit {
             {text: 'Ok',
             role: 'cancel',
           handler: () =>{
-            this.getImageIfExists();
+            this.ngOnInit();
           }}
         ]
       });

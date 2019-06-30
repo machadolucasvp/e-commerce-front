@@ -20,14 +20,9 @@ export class ProdutoDetailsPage implements OnInit {
 
   ngOnInit() {
     this.router.params.subscribe(response=>{
-      console.log(response);
-      console.log("ta saindo algo ?");
       this.cod_produtoAux=response['cod_produto'];
-      console.log(this.cod_produtoAux);
       this.produtoService.findById(response.cod_produto).subscribe(response=>{
-        console.log(response);
         this.produto=response;
-        console.log(this.produto);
         this.getImageIfExists();
       },
       error => {});

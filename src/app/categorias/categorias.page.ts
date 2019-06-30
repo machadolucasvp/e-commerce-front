@@ -17,12 +17,7 @@ export class CategoriasPage implements OnInit {
 
   constructor(public router: Router,public categoriaService: CategoriaService) {
     //Rquisição assincrona !
-    this.categoriaService.findAll().subscribe(resposta => {
-      this.Categorias=resposta;
-    },
-    error => {
-      console.log(error);
-    });
+  
    }
 
   openProdutos(cod_categoria: string){
@@ -30,6 +25,11 @@ export class CategoriasPage implements OnInit {
   }
 
   ngOnInit() {
+    this.categoriaService.findAll().subscribe(resposta => {
+      this.Categorias=resposta;
+    },
+    error => {
+    });
   }
 
 

@@ -18,10 +18,8 @@ export class ProdutosPage implements OnInit {
   ngOnInit() {
     this.router.params.subscribe(response=>{
       this.cod_categoriaAux=response['cod_categoria'];
-      console.log(this.cod_categoriaAux);
       this.produtoService.findByCategoria(this.cod_categoriaAux).subscribe(response=>{
         this.produtosDTO=response['content'];
-        console.log(this.produtosDTO);
         this.getImageIfExists();
       },
       error => {});
@@ -40,7 +38,6 @@ export class ProdutosPage implements OnInit {
         this.produtoService.getImageFromBucket(produto.cod_produto)
       .subscribe(response => {
         produto.imageUrl = `${API_CONFIG.bucket}/prod${produto.cod_produto}.jpg`;
-        console.log(produto.imageUrl);
       },
       error => {
       });
