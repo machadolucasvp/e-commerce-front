@@ -21,7 +21,7 @@
       <ion-thumbnail class="thumbimg" size="large" slot="start">
         <img [src]="produto.imageUrl || 'assets/imgs/prod.jpg'">
       </ion-thumbnail>
-      <ion-label>
+      <ion-label text-wrap>
         <h2>{{produto.nome}}</h2> <br>
         <p class="money">{{produto.preco | currency}}</p>
       </ion-label>

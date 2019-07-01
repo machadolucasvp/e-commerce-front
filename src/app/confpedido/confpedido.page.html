@@ -18,8 +18,8 @@
             <ion-thumbnail slot="start">
               <img [src]="item.produto.imageUrl || 'assets/imgs/prod.jpg'">
             </ion-thumbnail>
-            <ion-label>
-                <h1>{{item.produto.nome}}</h1>
+            <ion-label text-wrap>
+                <h3>{{item.produto.nome}}</h3>
                 <p>{{item.produto.preco | currency}}</p>
                 <p>{{item.quantidade}} Unidade</p> 
             </ion-label>

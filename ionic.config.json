@@ -1,5 +1,7 @@
 {
   "name": "e-commerce-front",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

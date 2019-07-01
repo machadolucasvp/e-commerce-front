@@ -20,16 +20,16 @@ export class SignupPage implements OnInit {
 
   constructor(public router: Router,public alertController: AlertController, public clienteService: ClienteService, public formBuilder: FormBuilder,public estadoService: EstadoService,public cidadeService: CidadesService) { 
     this.formGroup=this.formBuilder.group({
-      nome: ['Joaquim', [Validators.required, Validators.minLength(6), Validators.maxLength(100)]],
-      email: ['joaquim@gmail.com', [Validators.required, Validators.email]],
-      cpf : ['06134596280', [Validators.required, Validators.minLength(11), Validators.maxLength(14)]],
-      senha : ['123', [Validators.required]],
-      logradouro : ['Rua Via', [Validators.required]],
-      numero : ['25', [Validators.required]],
-      complemento : ['Apto 3', []],
-      bairro : ['Copacabana', []],
-      cep : ['10828333', [Validators.required]],
-      telefone1 : ['977261827', [Validators.required]],
+      nome: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(100)]],
+      email: ['', [Validators.required, Validators.email]],
+      cpf : ['', [Validators.required, Validators.minLength(11), Validators.maxLength(14)]],
+      senha : ['', [Validators.required]],
+      logradouro : [' ', [Validators.required]],
+      numero : ['', [Validators.required]],
+      complemento : ['', []],
+      bairro : ['', []],
+      cep : ['', [Validators.required]],
+      telefone1 : ['', [Validators.required]],
       telefone2 : ['', []],
       estado : ['null', [Validators.required]],
       cidade : ['null', [Validators.required]]  

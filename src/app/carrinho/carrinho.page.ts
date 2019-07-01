@@ -19,9 +19,12 @@ export class CarrinhoPage implements OnInit {
   constructor(public router: Router, public produtoService: ProdutoService,public cartService: PedidoService,public storageService: StorageService) { }
 
   ngOnInit() {
+  }
+  ionViewWillEnter(){
     let cart = this.cartService.getCart();
     this.Items=cart.Items;
     this.getImageIfExists();
+
   }
 
   getImageIfExists() {
